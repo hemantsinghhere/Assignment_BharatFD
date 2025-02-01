@@ -1,0 +1,9 @@
+Django==4.2
+djangorestframework==3.14.0
+django-ckeditor==6.7.0
+googletrans==4.0.0-rc1
+redis==5.0.0
+django-redis==5.2.0
+pytest==7.4.0
+flake8==6.1.0
+black==23.9.1
