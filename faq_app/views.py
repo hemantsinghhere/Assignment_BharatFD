@@ -8,6 +8,7 @@ import logging
 # Set up logging
 logger = logging.getLogger(__name__)
 
+
 class FAQViewSet(viewsets.ModelViewSet):
     queryset = FAQ.objects.all()
     serializer_class = FAQSerializer
@@ -28,7 +29,9 @@ class FAQViewSet(viewsets.ModelViewSet):
                 # Translate the answer (if not English)
                 if lang != "en":
                     try:
-                        translated_answer = translator.translate(faq.answer, dest=lang).text
+                        translated_answer = translator.translate(
+                            faq.answer, dest=lang
+                        ).text
                         faq.answer = translated_answer
                     except Exception as e:
                         # Log the error and use the original answer
@@ -41,13 +44,15 @@ class FAQViewSet(viewsets.ModelViewSet):
         return queryset
 
     def perform_create(self, serializer):
-        # Save the new FAQ
+    # Save the new FAQ
         faq = serializer.save()
 
-        # Clear the cache for all languages
-        lang = self.request.query_params.get("lang", "en")
-        cache_key = f"faqs_{lang}"
-        cache.delete(cache_key)
+    # Clear cache for all language versions
+        cache_keys = cache.keys("faqs_*")  # Get all cached keys that match "faqs_*"
+        if cache_keys:
+            cache.delete_many(cache_keys)
 
-        # Log the creation of a new FAQ
+    # Log the creation of a new FAQ
         logger.info(f"New FAQ created: ID {faq.id}, Question: {faq.question}")
+
+
