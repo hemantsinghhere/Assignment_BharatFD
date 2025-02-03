@@ -2,6 +2,19 @@
 
 This is a Django-based FAQ (Frequently Asked Questions) management system that supports multi-language translations, caching with Redis, and a REST API for managing FAQs.
 
+### AWS EC2 Links : 
+
+#### Deployment Link (Admin side) : http://13.61.242.87:8000/admin 
+##### Admin Credentials
+
+ *Username : hemantsinghhere*  
+*Password : Abcd@2021*
+
+#### Deplyment Link (User side) : http://13.61.242.87:8000/api/faqs
+
+
+
+
 ## **Features**
 - **Multi-language Support**: FAQs can be translated into multiple languages (e.g., English, Hindi, Bengali).
 - **Rich Text Editor**: Answers can be formatted using a WYSIWYG editor (CKEditor).
