@@ -4,7 +4,7 @@ This is a Django-based FAQ (Frequently Asked Questions) management system that s
 
 ### AWS EC2 Links : 
 
-#### Deployment Link (Admin side) : http://13.61.242.87:8000/admin 
+#### Deployment Link (Admin side) : http://16.16.87.243:8000/admin 
 ##### Admin Credentials
 
  *Username : hemantsinghhere*  
