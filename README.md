@@ -10,7 +10,7 @@ This is a Django-based FAQ (Frequently Asked Questions) management system that s
  *Username : hemantsinghhere*  
 *Password : Abcd@2021*
 
-#### Deplyment Link (User side) : http://13.61.242.87:8000/api/faqs
+#### Deplyment Link (User side) : http://16.16.87.243:8000/api/faqs
 
 
 
